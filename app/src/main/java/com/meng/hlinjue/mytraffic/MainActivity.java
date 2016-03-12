@@ -1,11 +1,15 @@
 package com.meng.hlinjue.mytraffic;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+
+import java.net.URI;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -36,6 +40,11 @@ public class MainActivity extends ActionBarActivity {
                 //Sound effect
                 MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(),R.raw.elephant);
                 mediaPlayer.start();
+
+                //Web View
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://youtu.be/1jJP0CcuJyE"));
+                startActivity(intent);
 
             }//onclick
         });
